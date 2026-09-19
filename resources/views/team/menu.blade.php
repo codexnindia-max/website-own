@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Dashboard Menu | CodexnIndia</title>
     <link rel="stylesheet" href="{{ asset('css/app.css') }}?v={{ file_exists(public_path('css/app.css')) ? filemtime(public_path('css/app.css')) : time() }}">
+    <link rel="stylesheet" href="{{ asset('css/team.css') }}?v={{ file_exists(public_path('css/team.css')) ? filemtime(public_path('css/team.css')) : time() }}">
 </head>
 <body class="dashboard-menu-page">
     <main class="dashboard-menu-screen">
@@ -19,7 +20,7 @@
         </section>
         <nav class="dashboard-menu-list">
             <a class="active" href="{{ route('team.dashboard') }}"><i class="bi bi-house-door-fill"></i><span>Dashboard</span></a>
-            <a href="#enquiries"><i class="bi bi-inbox-fill"></i><span>Enquiries</span><b>12</b></a>
+            <a href="{{ route('team.enquiries') }}"><i class="bi bi-inbox-fill"></i><span>Enquiries</span><b>12</b></a>
             <a href="#projects"><i class="bi bi-briefcase-fill"></i><span>Projects</span></a>
             <a href="#services"><i class="bi bi-list-task"></i><span>Services</span></a>
             <a href="#blog"><i class="bi bi-file-earmark-text-fill"></i><span>Blog</span><em><i class="bi bi-chevron-down"></i></em></a>

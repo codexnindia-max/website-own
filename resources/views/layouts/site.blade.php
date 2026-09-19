@@ -6,6 +6,9 @@
     <title>{{ $title ?? 'CodexnIndia' }} | CodexnIndia</title>
     <meta name="description" content="{{ $description ?? 'CodexnIndia builds websites, software and digital growth solutions.' }}">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}?v={{ file_exists(public_path('css/app.css')) ? filemtime(public_path('css/app.css')) : time() }}">
+    @if(request()->routeIs('team') || request()->routeIs('team.detail') || request()->routeIs('team.dashboard') || request()->routeIs('team.dashboard.menu') || request()->routeIs('team.enquiries'))
+        <link rel="stylesheet" href="{{ asset('css/team.css') }}?v={{ file_exists(public_path('css/team.css')) ? filemtime(public_path('css/team.css')) : time() }}">
+    @endif
     <script src="{{ asset('js/app.js') }}?v={{ file_exists(public_path('js/app.js')) ? filemtime(public_path('js/app.js')) : time() }}" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
 </head>

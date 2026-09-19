@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BlogController;
 use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'home')->name('home');
@@ -15,6 +16,30 @@ Route::view('/login/client', 'login-client')->name('login.client');
 Route::view('/login/team', 'login-team')->name('login.team');
 Route::view('/team-dashboard', 'team.dashboard')->name('team.dashboard');
 Route::view('/team-dashboard/menu', 'team.menu')->name('team.dashboard.menu');
+Route::view('/team-dashboard/enquiries', 'team.enquiries')->name('team.enquiries');
+Route::view('/team/blog', 'team.blog')->name('team.blog');
+Route::view('/team/blog/create', 'team.blog-create')->name('team.blog.create');
+Route::view('/team/projects', 'team.projects')->name('team.projects');
+Route::view('/team/projects/create', 'team.project-create')->name('team.projects.create');
+Route::view('/team/projects/nivara-finance', 'team.project-detail')->name('team.projects.detail');
+Route::view('/team/members', 'team.members')->name('team.members');
+Route::view('/team/members/create', 'team.member-create')->name('team.members.create');
+Route::view('/team/services', 'team.services')->name('team.services');
+Route::view('/team/services/create', 'team.service-create')->name('team.services.create');
+Route::view('/team/clients', 'team.clients')->name('team.clients');
+Route::view('/team/clients/create', 'team.client-create')->name('team.clients.create');
+Route::get('/team/clients/{client}/edit', function (string $client) {
+	abort_unless(in_array($client, ['dreamhome-real-estate', 'nexus-property-group', 'medicore-health', 'northstar-growth'], true), 404);
+	return view('team.client-edit', ['client' => $client]);
+})->name('team.clients.edit');
+Route::get('/team/clients/{client}/work/create', function (string $client) {
+	abort_unless(in_array($client, ['dreamhome-real-estate', 'nexus-property-group', 'medicore-health', 'northstar-growth'], true), 404);
+	return view('team.client-work-create', ['client' => $client]);
+})->name('team.clients.work.create');
+Route::get('/team/clients/{client}', function (string $client) {
+	abort_unless(in_array($client, ['dreamhome-real-estate', 'nexus-property-group', 'medicore-health', 'northstar-growth'], true), 404);
+	return view('team.client-detail', ['client' => $client]);
+})->name('team.clients.detail');
 
 Route::get('/services/{service}', function (string $service) {
 	$services = [
@@ -54,65 +79,4 @@ Route::get('/team/{member}', function (string $member) {
 	return view('team.detail', ['member' => $members[$member], 'slug' => $member]);
 })->name('team.detail');
 
-Route::get('/blog/{post}', function (string $post) {
-	$posts = [
-		'laravel-12-whats-new' => [
-			'title' => "Laravel 12: What's New and Why It Matters in 2025",
-			'category' => 'Web Development',
-			'subtitle' => 'Explore the latest features, improvements, and performance updates in Laravel 12, and how it can help you build modern, scalable, and secure web applications faster.',
-			'author' => 'Abhishek Kapoor',
-			'authorRole' => 'Full Stack Developer',
-			'date' => 'Aug 25, 2025',
-			'readTime' => '8 min read',
-			'views' => '1.2K views',
-			'image' => 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=85',
-		],
-		'google-ads-vs-meta-ads' => [
-			'title' => 'Google Ads vs Meta Ads: Which is Better for Your Business?',
-			'category' => 'Digital Marketing',
-			'subtitle' => 'Compare Google Ads and Meta Ads to find the best platform for your business goals, budget, and target audience.',
-			'author' => 'Rahul Verma',
-			'authorRole' => 'Digital Marketing Lead',
-			'date' => 'Aug 20, 2025',
-			'readTime' => '6 min read',
-			'views' => '950 views',
-			'image' => 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&w=1200&q=85',
-		],
-		'seo-strategies-2025' => [
-			'title' => '10 Proven SEO Strategies to Rank Higher in 2025',
-			'category' => 'SEO',
-			'subtitle' => 'Learn the latest SEO strategies to improve your website ranking, get more organic traffic, and generate quality leads.',
-			'author' => 'Rahul Verma',
-			'authorRole' => 'SEO Specialist',
-			'date' => 'Aug 18, 2025',
-			'readTime' => '7 min read',
-			'views' => '1.5K views',
-			'image' => 'https://images.unsplash.com/photo-1571721795195-a2ca2d3370a9?auto=format&fit=crop&w=1200&q=85',
-		],
-		'modern-business-website-features' => [
-			'title' => 'Top 10 Features Every Modern Business Website Must Have',
-			'category' => 'Web Development',
-			'subtitle' => 'Make your website more effective with these essential features that improve user experience and conversions.',
-			'author' => 'Abhishek Kapoor',
-			'authorRole' => 'Full Stack Developer',
-			'date' => 'Aug 12, 2025',
-			'readTime' => '5 min read',
-			'views' => '1.1K views',
-			'image' => 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=85',
-		],
-		'ai-transforming-it-industry' => [
-			'title' => 'How AI is Transforming the IT Industry',
-			'category' => 'Technology',
-			'subtitle' => 'Explore how artificial intelligence is changing the way businesses build software, operate, and grow.',
-			'author' => 'Abhishek Kapoor',
-			'authorRole' => 'Technical Lead',
-			'date' => 'Aug 05, 2025',
-			'readTime' => '8 min read',
-			'views' => '2.1K views',
-			'image' => 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=85',
-		],
-	];
-
-	$postData = $posts[$post] ?? $posts['laravel-12-whats-new'];
-	return view('blog-detail', ['post' => $postData, 'slug' => $post]);
-})->name('blog.detail');
+Route::get('/blog/{post}', [BlogController::class, 'show'])->name('blog.detail');
