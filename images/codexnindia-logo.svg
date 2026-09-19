@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="100" viewBox="0 0 420 100" role="img" aria-labelledby="title">
+  <title>CodexnIndia logo placeholder</title>
+  <rect width="420" height="100" rx="18" fill="#ffffff"/>
+  <path d="M48 75 72 20h32L80 75Z" fill="#ff3b18"/>
+  <path d="m78 75 25-55h29l-25 55Z" fill="#101522"/>
+  <text x="148" y="63" fill="#101522" font-family="Arial, sans-serif" font-size="36" font-weight="700">Codexn</text>
+  <text x="295" y="63" fill="#ff3b18" font-family="Arial, sans-serif" font-size="36" font-weight="700">India</text>
+</svg>
