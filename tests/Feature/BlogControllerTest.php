@@ -103,6 +103,8 @@ test('backend clients flow loads', function () {
     $work->assertOk();
     $work->assertSee('Add Client Work');
     $work->assertSee('Delivery Model');
+    $work->assertSee('Add Point');
+    $work->assertSee('client_needs[0]');
     $detail->assertOk();
     $detail->assertSee('client-detail-page');
     $detail->assertSee('client-panel');

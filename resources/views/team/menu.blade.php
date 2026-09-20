@@ -26,11 +26,12 @@
             <a href="#blog"><i class="bi bi-file-earmark-text-fill"></i><span>Blog</span><em><i class="bi bi-chevron-down"></i></em></a>
             <a href="#team"><i class="bi bi-people-fill"></i><span>Team</span></a>
             <a href="#clients"><i class="bi bi-person-vcard-fill"></i><span>Clients</span></a>
-            <a href="#testimonials"><i class="bi bi-patch-check-fill"></i><span>Testimonials</span></a>
+            <a href="{{ route('team.google-reviews') }}"><i class="bi bi-google"></i><span>Google Reviews</span></a>
             <a href="#pages"><i class="bi bi-files"></i><span>Pages</span><em><i class="bi bi-chevron-down"></i></em></a>
             <a href="#media"><i class="bi bi-images"></i><span>Media</span></a>
             <a href="#careers"><i class="bi bi-briefcase-fill"></i><span>Careers</span></a>
-            <a href="#settings"><i class="bi bi-gear-fill"></i><span>Settings</span></a>
+            <a href="{{ route('team.newsletter') }}"><i class="bi bi-envelope-paper-fill"></i><span>Newsletter</span></a>
+            <a href="{{ route('team.settings') }}"><i class="bi bi-gear-fill"></i><span>Settings</span></a>
         </nav>
         <div class="dashboard-menu-idea">Ideas<br>Code<br><em>Growth</em><br>Together <i class="bi bi-arrow-right-circle-fill"></i></div>
         <footer class="dashboard-menu-footer"><span>v1.0</span><a href="{{ route('login') }}"><i class="bi bi-box-arrow-right"></i> Logout</a></footer>

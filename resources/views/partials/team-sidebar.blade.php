@@ -9,11 +9,12 @@
         <a class="{{ request()->routeIs('team.services*') ? 'active' : '' }}" href="{{ route('team.services') }}"><i class="bi bi-list-task"></i> Services</a>
         <a class="{{ request()->routeIs('team.members*') ? 'active' : '' }}" href="{{ route('team.members') }}"><i class="bi bi-people-fill"></i> Team</a>
         <a class="{{ request()->routeIs('team.clients*') ? 'active' : '' }}" href="{{ route('team.clients') }}"><i class="bi bi-person-vcard-fill"></i> Clients</a>
-        <a href="{{ route('team.dashboard') }}#testimonials"><i class="bi bi-heart-fill"></i> Testimonials</a>
+        <a class="{{ request()->routeIs('team.google-reviews') ? 'active' : '' }}" href="{{ route('team.google-reviews') }}"><i class="bi bi-google"></i> Google Reviews</a>
         <a href="{{ route('team.dashboard') }}#pages"><i class="bi bi-files"></i> Pages</a>
         <a href="{{ route('team.dashboard') }}#media"><i class="bi bi-images"></i> Media</a>
         <a href="{{ route('team.dashboard') }}#careers"><i class="bi bi-briefcase-fill"></i> Careers</a>
-        <a href="{{ route('team.dashboard') }}#settings"><i class="bi bi-gear-fill"></i> Settings</a>
+        <a class="{{ request()->routeIs('team.newsletter') ? 'active' : '' }}" href="{{ route('team.newsletter') }}"><i class="bi bi-envelope-paper-fill"></i> Newsletter</a>
+        <a class="{{ request()->routeIs('team.settings') ? 'active' : '' }}" href="{{ route('team.settings') }}"><i class="bi bi-gear-fill"></i> Settings</a>
     </nav>
     <div class="dashboard-sidebar-cta">Ideas<br>Code<br><em>Grow</em><br>Together <i class="bi bi-arrow-right-circle-fill"></i></div>
     <div class="dashboard-user-mini"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=100&q=80" alt="Abhishek Kapoor"><span><b>Abhishek Kapoor</b><small>Administrator</small></span></div>

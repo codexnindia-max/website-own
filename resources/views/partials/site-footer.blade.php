@@ -34,11 +34,36 @@
             <div class="col-lg-3">
                 <h3 class="h6 fw-bold">Newsletter</h3>
                 <p class="small text-secondary">Get latest updates and tech insights.</p>
-                <form class="input-group" onsubmit="return false;">
-                    <input class="form-control" type="email" placeholder="Enter your email" aria-label="Email address" required>
+                <form class="input-group" id="newsletterSignupForm">
+                    <input class="form-control" id="newsletterEmail" type="email" placeholder="Enter your email" aria-label="Email address" required>
                     <button class="btn btn-brand" type="submit">Subscribe</button>
                 </form>
+                <small class="text-success d-none" id="newsletterSignupMessage">You are subscribed. Thank you!</small>
             </div>
         </div>
     </div>
 </footer>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const form = document.getElementById('newsletterSignupForm');
+    if (!form) return;
+    form.addEventListener('submit', function (event) {
+        event.preventDefault();
+        const input = document.getElementById('newsletterEmail');
+        const email = input.value.trim().toLowerCase();
+        let subscribers = [];
+        try {
+            const savedSubscribers = JSON.parse(localStorage.getItem('codexnindia_newsletter_subscribers') || '[]');
+            subscribers = Array.isArray(savedSubscribers) ? savedSubscribers.filter(function (subscriber) { return subscriber && subscriber.email; }) : [];
+        } catch (error) {
+            localStorage.removeItem('codexnindia_newsletter_subscribers');
+        }
+        if (!subscribers.some(function (subscriber) { return subscriber.email === email; })) {
+            subscribers.push({ email: email, date: new Date().toLocaleDateString('en-IN') });
+            localStorage.setItem('codexnindia_newsletter_subscribers', JSON.stringify(subscribers));
+        }
+        input.value = '';
+        document.getElementById('newsletterSignupMessage').classList.remove('d-none');
+    });
+});
+</script>

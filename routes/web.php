@@ -28,6 +28,20 @@ Route::view('/team/services', 'team.services')->name('team.services');
 Route::view('/team/services/create', 'team.service-create')->name('team.services.create');
 Route::view('/team/clients', 'team.clients')->name('team.clients');
 Route::view('/team/clients/create', 'team.client-create')->name('team.clients.create');
+Route::view('/team/google-reviews', 'team.google-reviews')->name('team.google-reviews');
+Route::view('/team/settings', 'team.settings')->name('team.settings');
+Route::view('/team/newsletter', 'team.newsletter')->name('team.newsletter');
+Route::get('/team/google-reviews/{review}/edit', function (string $review) {
+	$reviews = [
+		'aarav-mehta' => ['Aarav Mehta', 'Business owner', 'A', 'published', 'CodexnIndia understood our idea quickly and turned it into a website that feels polished and easy to use.'],
+		'priya-sharma' => ['Priya Sharma', 'Founder, Nivara', 'P', 'published', 'Clear communication, reliable delivery, and a team that genuinely listens to feedback. Highly recommended.'],
+		'rohan-kapoor' => ['Rohan Kapoor', 'Marketing lead', 'R', 'published', 'Our search traffic and enquiries improved within months. The support after launch made a big difference.'],
+		'meera-joshi' => ['Meera Joshi', 'Founder, BrightPath', 'M', 'draft', 'A thoughtful team that brought structure and clarity to our next digital project.'],
+	];
+
+	abort_unless(isset($reviews[$review]), 404);
+	return view('team.google-review-edit', ['review' => $reviews[$review], 'reviewSlug' => $review]);
+})->name('team.google-reviews.edit');
 Route::get('/team/clients/{client}/edit', function (string $client) {
 	abort_unless(in_array($client, ['dreamhome-real-estate', 'nexus-property-group', 'medicore-health', 'northstar-growth'], true), 404);
 	return view('team.client-edit', ['client' => $client]);
