@@ -1,0 +1,12 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Serve public assets when the host points the domain at the repository root.
+    RewriteCond %{REQUEST_URI} !^/public(?:/|$)
+    RewriteCond %{DOCUMENT_ROOT}/public/$1 -f [OR]
+    RewriteCond %{DOCUMENT_ROOT}/public/$1 -d
+    RewriteRule ^(.+)$ public/$1 [L]
+
+    # Send all application requests to Laravel's public entry point.
+    RewriteRule ^ index.php [L]
+</IfModule>

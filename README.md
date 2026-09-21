@@ -7,24 +7,6 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## Deployment
-
-This project can deploy automatically to a cPanel server after a push to the
-`main` branch. The server must have PHP 8.2+, Composer, Git, and SSH access.
-
-Add these repository secrets in GitHub under **Settings > Secrets and variables
-> Actions**:
-
-- `DEPLOY_HOST`: the hosting server hostname
-- `DEPLOY_USER`: the cPanel SSH username
-- `DEPLOY_SSH_KEY`: the private SSH key for that user
-- `DEPLOY_PATH`: the full Laravel project path, for example
-	`/home/USERNAME/laravel_app`
-
-Before the first deployment, clone this repository on the server, create the
-production `.env` file there, and point the domain document root to the
-project's `public` directory. Never commit `.env` or SSH keys.
-
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
