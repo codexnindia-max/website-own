@@ -3,7 +3,7 @@
         <div class="row g-4">
             <div class="col-lg-3">
                 <a class="brand d-inline-flex align-items-center" href="{{ url('/') }}">
-                    <img class="brand-logo" src="{{ asset('images/codexnindia-logo.png') }}" alt="CodexnIndia">
+                    <img class="brand-logo" src="{{ asset('images/Codexnindia-logo.png') }}" alt="CodexnIndia">
                 </a>
                 <p class="small text-secondary mt-3">Technology for a brighter tomorrow.</p>
                 <div class="d-flex gap-2">
