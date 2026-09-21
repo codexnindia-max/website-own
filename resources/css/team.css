@@ -68,12 +68,16 @@
 .team-join-cta { background: linear-gradient(110deg, #090e17, #111827 50%, #1e1215); border-radius: 1.5rem; }
 
 /* Team dashboard */
+.dashboard-content .custom-software-welcome-row { grid-template-columns: minmax(0, 1fr) auto; }
+.custom-software-welcome-row > .custom-software-preview-badge { justify-self: end; white-space: nowrap; }
 .dashboard-content .newsletter-welcome-row { grid-template-columns: minmax(0, 1fr) auto; }
 .newsletter-welcome-row > .newsletter-ui-badge { justify-self: end; }
 .newsletter-card-head { align-items: flex-end; }
 .newsletter-tools { align-items: center; flex-wrap: wrap; justify-content: flex-end; }
 .newsletter-tools input { width: min(230px, 100%); }
 @media (max-width: 575.98px) {
+    .dashboard-content .custom-software-welcome-row { grid-template-columns: 1fr; }
+    .custom-software-welcome-row > .custom-software-preview-badge { justify-self: end; }
     .newsletter-welcome-row { grid-template-columns: 1fr; }
     .newsletter-welcome-row > .newsletter-ui-badge { justify-self: end; }
     .newsletter-tools { width: 100%; justify-content: flex-start; }

@@ -10,9 +10,7 @@
         <a class="{{ request()->routeIs('team.members*') ? 'active' : '' }}" href="{{ route('team.members') }}"><i class="bi bi-people-fill"></i> Team</a>
         <a class="{{ request()->routeIs('team.clients*') ? 'active' : '' }}" href="{{ route('team.clients') }}"><i class="bi bi-person-vcard-fill"></i> Clients</a>
         <a class="{{ request()->routeIs('team.google-reviews') ? 'active' : '' }}" href="{{ route('team.google-reviews') }}"><i class="bi bi-google"></i> Google Reviews</a>
-        <a href="{{ route('team.dashboard') }}#pages"><i class="bi bi-files"></i> Pages</a>
-        <a href="{{ route('team.dashboard') }}#media"><i class="bi bi-images"></i> Media</a>
-        <a href="{{ route('team.dashboard') }}#careers"><i class="bi bi-briefcase-fill"></i> Careers</a>
+        <a class="{{ request()->routeIs('team.custom-software') ? 'active' : '' }}" href="{{ route('team.custom-software') }}"><i class="bi bi-boxes"></i> Custom Software</a>
         <a class="{{ request()->routeIs('team.newsletter') ? 'active' : '' }}" href="{{ route('team.newsletter') }}"><i class="bi bi-envelope-paper-fill"></i> Newsletter</a>
         <a class="{{ request()->routeIs('team.settings') ? 'active' : '' }}" href="{{ route('team.settings') }}"><i class="bi bi-gear-fill"></i> Settings</a>
     </nav>

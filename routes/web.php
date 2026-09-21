@@ -26,6 +26,7 @@ Route::view('/team/members', 'team.members')->name('team.members');
 Route::view('/team/members/create', 'team.member-create')->name('team.members.create');
 Route::view('/team/services', 'team.services')->name('team.services');
 Route::view('/team/services/create', 'team.service-create')->name('team.services.create');
+Route::view('/team/custom-software', 'team.custom-software')->name('team.custom-software');
 Route::view('/team/clients', 'team.clients')->name('team.clients');
 Route::view('/team/clients/create', 'team.client-create')->name('team.clients.create');
 Route::view('/team/google-reviews', 'team.google-reviews')->name('team.google-reviews');
