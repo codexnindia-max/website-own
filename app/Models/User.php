@@ -46,15 +46,4 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
-
-    public static function insertuser($data)
-    {
-         $user = self::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
-        ]);
-
-        return $user;
-    }
 }
