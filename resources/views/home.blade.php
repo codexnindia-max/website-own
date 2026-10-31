@@ -42,7 +42,7 @@
                         <div class="hero-home-visual">
                             <div class="hero-home-frame"></div>
                             <div class="hero-home-scribble">Ideas<br><em>Code</em><br>Growth</div>
-                            <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&amp;fit=crop&amp;w=1100&amp;q=88" alt="CodexnIndia team planning a project">
+                            <img src="{{ asset('image/Codexnindia.com-hero-image.avif') }}" alt="CodexnIndia team planning a project">
                             <div class="hero-home-floating hero-home-floating-top"><i class="bi bi-stars"></i><span><b>Human-led</b><small>Technology partner</small></span></div>
                             <div class="hero-home-floating hero-home-floating-bottom"><strong>100+</strong><span>projects<br>delivered</span><i class="bi bi-arrow-up-right"></i></div>
                             <div class="hero-home-sticker">Make it<br><em>matter.</em></div>

@@ -17,7 +17,7 @@
                 <h3 class="h6 fw-bold">Portal Login</h3>
                 <p class="small text-secondary">Choose your client or team workspace.</p>
                 <a class="btn btn-brand btn-sm rounded-pill px-3" href="{{ route('login') }}">Choose Login <i class="bi bi-arrow-up-right ms-1"></i></a>
-            </div>
+            </div> 
             <div class="col-6 col-lg-2">
                 <h3 class="h6 fw-bold">Our Services</h3>
                 <a class="d-block small text-secondary mb-2" href="{{ route('service.detail', 'website-development') }}">Website Development</a>

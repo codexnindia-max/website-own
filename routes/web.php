@@ -3,6 +3,16 @@
 use App\Http\Controllers\BlogController;
 use Illuminate\Support\Facades\Route;
 
+Route::get('/css/{stylesheet}', function (string $stylesheet) {
+	abort_unless(in_array($stylesheet, ['app.css', 'team.css'], true), 404);
+	return response()->file(resource_path('css/' . $stylesheet), ['Content-Type' => 'text/css']);
+})->where('stylesheet', 'app\.css|team\.css');
+
+Route::get('/js/{script}', function (string $script) {
+	abort_unless($script === 'app.js', 404);
+	return response()->file(resource_path('js/' . $script), ['Content-Type' => 'application/javascript']);
+})->where('script', 'app\.js');
+
 Route::view('/', 'home')->name('home');
 
 Route::view('/about', 'about')->name('about');
