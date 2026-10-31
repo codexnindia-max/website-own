@@ -80,7 +80,7 @@
         </div></div></section>
 
         <section class="py-5 bg-light"><div class="container"><div class="row g-5 align-items-stretch"><div id="team" class="col-lg-7 d-flex flex-column"><div class="d-flex justify-content-between align-items-end mb-4"><div><p class="eyebrow mb-2">Meet our team</p><h2 class="h3 fw-bold">Talented People Behind <span class="text-brand">CodexnIndia</span></h2></div><a class="btn btn-outline-secondary btn-sm" href="#contact">View All Team →</a></div><div class="row row-cols-2 row-cols-md-4 g-3 text-center flex-grow-1 align-content-center">
-            @foreach ([['1500648767791-00dcc994a43e','Abhishek Kapoor','Founder & Developer'],['1573496359142-b8d87734a5a2','Priya Sharma','UI/UX Designer'],['1560250097-0b93528c311a','Rahul Verma','Digital Marketing'],['1580489944761-15a19d654956','Sneha Singh','Content Writer']] as $member)
+            @foreach ([['1500648767791-00dcc994a43e','Abhishek Kapoor','Founder & Developer'],['1573496359142-b8d87734a5a2','Sapna sharma','SEO']] as $member)
                 <div class="col"><img class="team-image rounded-circle mb-2" src="https://images.unsplash.com/photo-{{ $member[0] }}?auto=format&amp;fit=crop&amp;w=300&amp;q=80" alt="{{ $member[1] }}"><b class="d-block small">{{ $member[1] }}</b><small class="text-secondary">{{ $member[2] }}</small></div>
             @endforeach
         </div></div><div id="blog" class="col-lg-5 d-flex flex-column"><div class="d-flex justify-content-between align-items-end mb-4"><div><p class="eyebrow mb-2">Latest blogs</p><h2 class="h3 fw-bold">Insights &amp; <span class="text-brand">Updates</span></h2></div><a class="btn btn-outline-secondary btn-sm" href="#contact">View All →</a></div><div class="row row-cols-3 g-2 flex-grow-1 align-content-center">
